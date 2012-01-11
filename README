@@ -1,0 +1,9 @@
+call-observer
+=============
+
+A Telepathy Observer for the Call interface.
+
+This is a debugging tool to see what's going on with a Call channel. Its use
+is for CM development.
+
+Written by Danielle Madeley <danielle.madeley@collabora.co.uk>

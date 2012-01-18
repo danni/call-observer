@@ -32,9 +32,15 @@ def print_obj(obj, *args, **kwargs):
     if isinstance(obj, Tp.CallChannel):
         colour = 31 # red
     elif isinstance(obj, Tp.CallContent):
-        colour = 32 # green
+        if obj.get_media_type() == Tp.MediaStreamType.AUDIO:
+            colour = 32 # green
+        else:
+            colour = 34 # blue
     elif isinstance(obj, Tp.CallStream):
-        colour = 33 # yellow
+        if obj._content.get_media_type() == Tp.MediaStreamType.AUDIO:
+            colour = 33 # yellow
+        else:
+            colour = 35 # magenta
     else:
         colour = 37 # white
 

@@ -202,6 +202,16 @@ def observe_call(client, account, conn, channels, dispatch_op, requests,
         print_obj(channel,
             " -- %s --" % ("outgoing" if channel.get_property('requested') else "incoming"))
         state_changed (channel, None, None)
+        print_obj(channel, "Mutable contents: %s" %
+            channel.has_mutable_contents(), bold=True)
+        print_obj(channel, "Initial audio: %s (%s)" %
+            channel.has_initial_audio())
+        print_obj(channel, "Initial video: %s (%s)" %
+            channel.has_initial_video())
+
+        print_obj(channel, "  Interfaces:")
+        for iface in channel.get_property('interfaces'):
+            print_obj(channel, "   - %s" % iface)
 
         for content in channel.get_contents():
             content_added(channel, content, None)

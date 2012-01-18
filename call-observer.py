@@ -103,7 +103,7 @@ def streams_added(content, streams, user_data):
             stream._content.get_name(),
             stream.get_object_path()))
         print_obj(stream, "  Interfaces:")
-        for iface in content.get_property('interfaces'):
+        for iface in stream.get_property('interfaces'):
             print_obj(stream, "   - %s" % iface)
 
         stream_local_sending_state_changed (stream)
